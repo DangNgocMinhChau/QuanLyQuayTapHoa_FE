@@ -8,6 +8,7 @@ import PageQuanLyFiles from "../pages/quanlyfile/pageQuanLyFiles";
 
 import { arrayFileConfig } from "../common/commom_object_config_auto_create/ArrayFileConfig";
 import PageConfigCRUD from "../pages/autoCreateDanhMuc/pageConfigCRUD/pageConfigCRUD";
+import PageCauHinhRouter from "../pages/quanlyurl/pageCauHinhRouter";
 
 const renderRouterConfig = () => {
   const dataPath = [];
@@ -44,15 +45,20 @@ const routes = [
     exact: true,
     main: ({ match, location }) => <Login match={match} location={location} />,
   },
+  {
+    path: "/createrouter",
+    exact: true,
+    main: ({ match, location }) => <PageCauHinhRouter match={match} location={location} />,
+  },
 
-    {
+  {
     path: "/files",
     exact: true,
     main: ({ match, location }) => (
       <PageQuanLyFiles location={location} match={match} />
     ),
   },
-   renderRouterConfig(),
+  renderRouterConfig(),
   {
     path: "",
     exact: true,

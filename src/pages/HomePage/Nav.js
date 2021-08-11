@@ -238,6 +238,15 @@ function Nav({ onToogleMenu, checkToogle, onSetColorMenu, colorMenu }) {
                     name={colorMenu ? "Menu tối" : "Menu sáng"}
                   />
                 </span>
+                <span className="dropdown-item">
+                    <Link
+                          to={{
+                            pathname: "/createrouter",
+                          }}
+                        >
+                          Cấu hình đường dẫn
+                        </Link>
+                </span>
               </div>
             </li>
           </ul>
