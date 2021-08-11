@@ -1,4 +1,5 @@
 
+// Chi ro kieu du lieu
 export default interface ObjectFormInterface{
     dataField : string,
     text: string,

@@ -60,6 +60,7 @@ const routes = [
   },
 ];
 
+// Chỗ build router tư dong
 let dataRouter = [];
 routes.map((itemMenu, indexMenu) => {
   if (Array.isArray(itemMenu) && itemMenu.length > 0) {
