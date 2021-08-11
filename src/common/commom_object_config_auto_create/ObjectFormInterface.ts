@@ -9,7 +9,7 @@ export default interface ObjectFormInterface{
     isFilter?:boolean,
     sort?:boolean
     width?: number,
-    render?:boolean,
+    render?:boolean, 
     renderConfig?:any,
     renderField:string,
     validate?:boolean,
