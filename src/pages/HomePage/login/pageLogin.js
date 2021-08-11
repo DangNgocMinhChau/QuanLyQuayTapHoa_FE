@@ -39,7 +39,7 @@ function PageLogin(props) {
   const onFinish = (values) => {
     const queryStringParam = queryString.stringifyUrl({
       url: "quanlytaikhoan/login",
-      query: { account: values.user, password: values.password },
+      query: { account: values.user, password: md5(values.password)},
     });
     dispatch(act.actLoginTaiKhoan(queryStringParam, setLoginThanhCong));
     // let dataUserLogin = listDataUser.filter(

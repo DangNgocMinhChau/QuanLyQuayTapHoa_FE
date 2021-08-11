@@ -1,7 +1,10 @@
 import React from "react";
-import { Form, Input, InputNumber, Select, Radio, DatePicker } from "antd";
+import { Form, Input, InputNumber, Select, Radio, DatePicker,TreeSelect } from "antd";
+import {renderTreeData} from "./../convert/renderConvert"
+
 const { Option } = Select;
 const dateFormat = "DD/MM/YYYY";
+const { TreeNode } = TreeSelect;
 
 export function RenderInput({
   label,
@@ -361,6 +364,58 @@ export function RenderInputTextArea({
         placeholder={label}
         style={style}
       />
+    </Form.Item>
+  );
+}
+
+
+export function RenderTreeSellectInput({
+  label,
+  name,
+  width,
+  onChange,
+  hidden,
+  validate,
+  textValidate,
+  showLabel,
+  dataTree,
+  value,
+  style,
+  showSearch=true,
+  allowClear=true,
+}) {
+  return (
+    <Form.Item
+      label={showLabel ? label : ""}
+      name={name}
+      hidden={hidden}
+      width={width}
+      rules={
+        validate && [
+          {
+            required: validate,
+            message:
+              textValidate !== null &&
+              textValidate !== undefined &&
+              textValidate !== ""
+                ? textValidate
+                : `Bạn chưa nhập   ${label} !`,
+          },
+        ]
+      }
+    >
+      <TreeSelect
+          showSearch={showSearch}
+          style={style}
+          value={value}
+          dropdownStyle={{ maxHeight: 400, overflow: "auto" }}
+          placeholder={label}
+          allowClear={allowClear}
+          treeDefaultExpandAll
+          onChange={onChange}
+        >
+                {renderTreeData(dataTree)}
+        </TreeSelect>
     </Form.Item>
   );
 }
