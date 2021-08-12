@@ -154,6 +154,7 @@ export default function PageQuanLyBanHang({ match, location }) {
                   ></i>
                 </Tooltip>
               </div> */}
+              {/* sua cho ni nghe */}
             </div>
             {checkFormThemMoiKhachHang && (
               <FormThongTinKhachHang
