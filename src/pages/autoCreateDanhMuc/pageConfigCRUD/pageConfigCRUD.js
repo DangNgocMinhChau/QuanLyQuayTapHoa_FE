@@ -16,9 +16,10 @@ export default function PageConfigCRUD({ propsDefineObject, match }) {
   const [idXoa, setIdXoa] = useState([]);
   const dispatch = useDispatch();
 
-  const { dataTable } = useSelector(
+  const { dataTable, account_current } = useSelector(
     (state) => ({
       dataTable: state.config_crud_auto.list,
+      account_current: state.quanlylogin.account_current,
     }),
     shallowEqual
   );
@@ -51,6 +52,8 @@ export default function PageConfigCRUD({ propsDefineObject, match }) {
       value = {
         ...value,
         ngayChinhSua: renderDateTheoHeThong(),
+        idNguoiTao: account_current.id,
+        nguoiTao: account_current.tenNguoiDung,
       };
       dispatch(
         actCRUDConfig.actUpdateRequest(propsDefineObject.apiCallServer, value)
@@ -59,6 +62,8 @@ export default function PageConfigCRUD({ propsDefineObject, match }) {
       value = {
         ...value,
         ngayTaoBanGhi: renderDateTheoHeThong(),
+        idNguoiTao: account_current.id,
+        nguoiTao: account_current.tenNguoiDung,
       };
       dispatch(
         actCRUDConfig.actCreateRequest(propsDefineObject.apiCallServer, value)
