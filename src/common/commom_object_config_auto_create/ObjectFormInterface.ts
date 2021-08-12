@@ -1,4 +1,5 @@
 
+// Chi ro kieu du lieu
 export default interface ObjectFormInterface{
     dataField : string,
     text: string,
@@ -8,7 +9,7 @@ export default interface ObjectFormInterface{
     isFilter?:boolean,
     sort?:boolean
     width?: number,
-    render?:boolean,
+    render?:boolean, 
     renderConfig?:any,
     renderField:string,
     validate?:boolean,

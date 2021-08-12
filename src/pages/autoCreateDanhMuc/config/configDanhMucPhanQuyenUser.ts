@@ -3,6 +3,7 @@ import ObjectFormInterface from "../../../common/commom_object_config_auto_creat
 import {TypeControl} from "../../../common/commom_object_config_auto_create/TypeControl.js";
 
 const defineObjectFormProps = () : ObjectFormInterface [] => ([
+    // Dinh nghia Form
     {
         dataField : "id",
         text: "ID",
@@ -28,7 +29,6 @@ const defineObjectFormProps = () : ObjectFormInterface [] => ([
         renderField: TypeControl.Input,
         validate:true,
         hidden:false
-
     },
     {
         dataField : "ten",
