@@ -1,44 +1,44 @@
 import AppModuleInterface from "../../../common/commom_object_config_auto_create/AppModuleInterface";
 import ObjectFormInterface from "../../../common/commom_object_config_auto_create/ObjectFormInterface";
-import {TypeControl} from "../../../common/commom_object_config_auto_create/TypeControl.js";
+import { TypeControl } from "../../../common/commom_object_config_auto_create/TypeControl.js";
 
-const defineObjectFormProps = () : ObjectFormInterface [] => ([
+const defineObjectFormProps = (): ObjectFormInterface[] => ([
     // Dinh nghia Form
     {
-        dataField : "id",
+        dataField: "id",
         text: "ID",
         description: "ID",
         defaultValue: "undefined",
-        isShow:false,
-        isFilter:true,
+        isShow: false,
+        isFilter: true,
         width: 50,
-        sort:true,
-        render:true,
-        renderField:TypeControl.Input,
-        hidden:true
+        sort: true,
+        render: true,
+        renderField: TypeControl.Input,
+        hidden: true
     },
-   
+
     {
-        dataField : "soCMND",
+        dataField: "soCMND",
         text: "Số CMND",
         description: "Sô CMND",
         defaultValue: "undefined",
-        isShow:true,
-        isFilter:false,
+        isShow: true,
+        isFilter: false,
         width: 200,
-        sort:true,
+        sort: true,
         renderField: TypeControl.Input,
-        hidden:false
+        hidden: false
     },
 ])
 
 
 export const configDanhMucQuanLyCMND = (): AppModuleInterface => ({
     appModuleId: "DANHMUC_QUANLY_CMND",
-    linkUrl:"/danhmuc/quanlycmnd",
-    name:"CMND",
-    description:"CMND",
+    linkUrl: "/danhmuc/quanlycmnd",
+    name: "CMND",
+    description: "CMND",
     defineObjectFormProps: defineObjectFormProps(),
     // Cho ni e lên coi thủ no la cai gi ben link API
-    apiCallServer:"quanlycmnd"
+    apiCallServer: "quanlycmnd"
 })
