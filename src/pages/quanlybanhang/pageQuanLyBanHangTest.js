@@ -24,6 +24,7 @@ class PageQuanLyBanHangTest extends Component {
       panes,
     };
   }
+  //sua them cho ni
   componentDidMount = () => {
     var {
       fetchBanHang,
